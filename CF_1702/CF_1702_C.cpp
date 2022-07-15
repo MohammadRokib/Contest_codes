@@ -22,6 +22,16 @@ int main()
             }
             else list[y].second = i;
         }
+
+        for (int i = 0; i < k; i++) {
+            int a, b;
+            cin >> a >> b;
+
+            if (!list.count(a) || !list.count(b)
+                || list[a].first > list[b].second)
+                cout << "NO\n";
+            else cout << "YES\n";
+        }
     }
     return 0;
 }
