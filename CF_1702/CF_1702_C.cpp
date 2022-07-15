@@ -10,13 +10,17 @@ int main()
         int n, k;
         cin >> n >> k;
 
-        int y, x = 0;
-        map <int, int> list;
+        map <int, pair<int, int>> list;
 
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
+            int y;
             cin >> y;
-            list.insert(pair <int, int> (x, y));
-            x = y;
+
+            if (!list.count(y)) {
+                list[y].first = i;
+                list[y].second = i;
+            }
+            else list[y].second = i;
         }
     }
     return 0;
